@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row border p-3 min-h-100" style="width: 100%;">
+        <!-- Left Panel -->
+        <div class="col-md-3 border-end p-0">
+            <div *ngFor="let entry of projectData?.Datas; let i = index" class="p-2 border-bottom"
+                [class.bg-secondary]="i === selectedIndex" [class.text-white]="i === selectedIndex"
+                (click)="onEntryClick(i)" style="cursor: pointer;">
+                {{ formatDateWithMoment(entry.SamplingTime) }}
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="col-md-9">
+            <div class="border p-3">
+                <div class="mb-3">
+                    <label class="form-label">Project Name:</label>
+                    <input class="form-control" type="text" [(ngModel)]="projectName" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Construction Count:</label>
+                    <input class="form-control" type="number" [(ngModel)]="constructionCount" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Is Construction Completed:</label>
+                    <input class="form-check-input ms-2" type="checkbox" [(ngModel)]="isConstructionCompleted" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Length of the road:</label>
+                    <div class="input-group">
+                        <input class="form-control" type="number" [(ngModel)]="lengthOfRoad" />
+                        <span class="input-group-text">KM</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline-dark" (click)="saveChanges()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

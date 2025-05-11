@@ -1,0 +1,25 @@
+<div class="container">
+    <h4><b>Project: </b>{{ projectData.Name }}</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sampling Time</th>
+                <th scope="col">Project Name</th>
+                <th scope="col">Construction Count</th>
+                <th scope="col">Is Construction Completed</th>
+                <th scope="col">Length of Road</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let entry of projectData.Datas">
+                <td>{{ formatDateWithMoment(entry.SamplingTime) }}</td>
+                <td>{{ getPropertyValue(entry.Properties, 'Project Name') }}</td>
+                <td>{{ getPropertyValue(entry.Properties, 'Construction Count') }}</td>
+                <td>{{ getPropertyValue(entry.Properties, 'Is Construction Completed') ? 'Yes' : 'No' }}</td>
+                <td>{{ getPropertyValue(entry.Properties, 'Length of the road') }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
