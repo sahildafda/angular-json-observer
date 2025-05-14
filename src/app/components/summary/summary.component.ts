@@ -23,7 +23,7 @@ export class SummaryComponent {
 
   // Load data from the backend API
   loadData() {
-    this.http.get<ProjectData>('http://localhost:3000/data')
+    this.http.get<ProjectData>('http://localhost:16358/api/Home')
       .subscribe({
         next: (data) => {
           this.projectData = data;

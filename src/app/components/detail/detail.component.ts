@@ -35,7 +35,7 @@ export class DetailComponent implements OnInit {
 
   // Load JSON data from the backend API
   loadData() {
-    this.http.get<any>('http://localhost:3000/data').subscribe({
+    this.http.get<any>('http://localhost:16358/api/Home').subscribe({
       next: (data) => {
         this.projectData = data;
 
@@ -98,7 +98,7 @@ export class DetailComponent implements OnInit {
     updateValue('Length of the road', this.lengthOfRoad);
 
     // Send updated entry to backend using SamplingTime as identifier
-    this.http.put(`http://localhost:3000/data/${this.selectedEntry.SamplingTime}`, {
+    this.http.post(`http://localhost:16358/api/Home`, {
       Properties: this.selectedEntry.Properties
     }).subscribe({
       next: () => {
