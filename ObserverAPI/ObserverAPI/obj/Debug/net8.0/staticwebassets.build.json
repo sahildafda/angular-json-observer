@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ancRU1Zdv0UE97GuBRw3ydBV3pp2fonVSjV0Z0la03U=",
+  "Source": "ObserverAPI",
+  "BasePath": "_content/ObserverAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
